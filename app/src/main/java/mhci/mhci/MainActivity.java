@@ -7,7 +7,6 @@ import android.support.design.widget.TabLayout;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -40,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void initPager() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.setVisibility(View.VISIBLE);
         viewPager = (ViewPager) findViewById(R.id.pager);
@@ -48,9 +47,11 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.content_fragment).setVisibility(View.GONE);
 
+		/*
         if (toolbar != null) {
             setSupportActionBar(toolbar);
         }
+        */
 
         adapter = new SectionPagerAdapter(getFragmentManager());
         viewPager.setAdapter(adapter);
