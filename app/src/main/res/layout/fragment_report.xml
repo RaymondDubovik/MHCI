@@ -1,23 +1,75 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-	<TextView
-		android:layout_width="match_parent"
-		android:layout_height="?attr/actionBarSize"
-		android:background="?attr/colorPrimary"
-		android:gravity="center"
-		android:text="Report"
-		android:textSize="20sp"
-		android:textStyle="bold"
-		android:textColor="@color/black"
-		/>
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="REPORT FRAGMENT"/>
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:gravity="center"
+                android:text="Report"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- TODO: Update blank fragment layout -->
+
+            <EditText
+                android:id="@+id/editTextReport"
+                android:layout_width="match_parent"
+                android:layout_height="124dp"
+                android:layout_marginTop="10dp"
+                android:gravity="top|left"
+                android:hint="Please describe the issue" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="20dp"
+                    android:text="Roads and Transportation" />
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="20dp"
+                    android:text="Waste and Recycling" />
+
+                <RadioButton
+                    android:id="@+id/radioButton3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="20dp"
+                    android:text="Environmental Issues" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/reportBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="90dp"
+                android:background="?attr/colorPrimary"
+                android:text="Submit" />
+        </LinearLayout>
+    </ScrollView>
+
 
 </LinearLayout>

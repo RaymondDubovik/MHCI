@@ -3,21 +3,143 @@
              android:layout_height="match_parent"
              android:orientation="vertical">
 
-	<TextView
+	<ScrollView
 		android:layout_width="match_parent"
-		android:layout_height="?attr/actionBarSize"
-		android:background="?attr/colorPrimary"
-		android:gravity="center"
-		android:text="Vote"
-		android:textSize="20sp"
-		android:textStyle="bold"
-		android:textColor="@color/black"
-		/>
+		android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="VOTE FRAGMENT"/>
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical">
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="?attr/actionBarSize"
+				android:background="?attr/colorPrimary"
+				android:gravity="center"
+				android:text="Vote"
+				android:textSize="20sp"
+				android:textStyle="bold"
+				android:textColor="@color/black"
+				/>
+
+
+			<LinearLayout
+				android:id="@+id/ll1"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+				<RadioGroup
+                    android:id="@+id/radioGroupVote1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Add a bus stop High street 25"
+                        android:id="@+id/textViewVote1" />
+
+                    <RadioButton
+						android:id="@+id/rb1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="20dp"
+                        android:text="Yes" />
+
+                    <RadioButton
+						android:id="@+id/rb2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="20dp"
+                        android:text="No" />
+
+                </RadioGroup>
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/ll2"
+				android:orientation="vertical"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
+
+				<RadioGroup
+					android:id="@+id/radioGroupVote2"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_horizontal">
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textAppearance="?android:attr/textAppearanceMedium"
+						android:text="Create a bicycle lane on High street from George street to Bill street"
+						android:id="@+id/textViewVote2" />
+
+					<RadioButton
+						android:id="@+id/rb3"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:paddingBottom="20dp"
+						android:text="Yes" />
+
+					<RadioButton
+						android:id="@+id/rb4"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:paddingBottom="20dp"
+						android:text="No" />
+
+				</RadioGroup>
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/ll3"
+				android:orientation="vertical"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
+
+				<RadioGroup
+					android:id="@+id/radioGroupVote3"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_horizontal">
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textAppearance="?android:attr/textAppearanceMedium"
+						android:text="What time do you usually go to local parks?"
+						android:id="@+id/textViewVote3" />
+
+					<RadioButton
+						android:id="@+id/rb5"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:paddingBottom="20dp"
+						android:text="Yes" />
+
+					<RadioButton
+						android:id="@+id/rb6"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:paddingBottom="20dp"
+						android:text="No" />
+
+				</RadioGroup>
+			</LinearLayout>
+
+			<Button
+				android:id="@+id/voteBtn"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:layout_marginBottom="90dp"
+				android:background="?attr/colorPrimary"
+				android:text="Submit" />
+
+		</LinearLayout>
+	</ScrollView>
+
 
 </LinearLayout>
