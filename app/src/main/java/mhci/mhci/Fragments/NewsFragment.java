@@ -23,8 +23,9 @@ public class NewsFragment extends Fragment implements MenuListener, View.OnClick
 	private LinearLayout llOtherCouncil;
 	private TextView tvNotice;
 
+
 	@Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_news, container, false);
 
 		tvNotice = (TextView) view.findViewById(R.id.tvNotice);
@@ -41,7 +42,7 @@ public class NewsFragment extends Fragment implements MenuListener, View.OnClick
 		ivAdd.setOnClickListener(this);
 
 		return view;
-    }
+	}
 
 
 	@Override
@@ -58,23 +59,37 @@ public class NewsFragment extends Fragment implements MenuListener, View.OnClick
 
 	@Override
 	public void onClick(View v) {
-		AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(activity);
-		LayoutInflater inflater = activity.getLayoutInflater();
-		final View dialogView = inflater.inflate(R.layout.dialog_add_notice, null);
-		dialogBuilder.setView(dialogView);
+		if (activity.isMenuPressed()) {
+			AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(activity);
+			LayoutInflater inflater = activity.getLayoutInflater();
+			final View dialogView = inflater.inflate(R.layout.dialog_add_notice, null);
+			dialogBuilder.setView(dialogView);
 
-		final EditText edt = (EditText) dialogView.findViewById(R.id.etNotice);
+			final EditText edt = (EditText) dialogView.findViewById(R.id.etNotice);
 
-		dialogBuilder.setTitle("Post on the noticeboard");
-		dialogBuilder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int whichButton) {
-				tvNotice.setText(edt.getText().toString());
-				tvNotice.setVisibility(View.VISIBLE);
-				Toast.makeText(activity, "Successfully posted!", Toast.LENGTH_SHORT).show();
-			}
-		});
+			dialogBuilder.setTitle("Post on the noticeboard");
+			dialogBuilder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog, int whichButton) {
+					tvNotice.setText(edt.getText().toString());
+					tvNotice.setVisibility(View.VISIBLE);
+					Toast.makeText(activity, "Successfully posted!", Toast.LENGTH_SHORT).show();
+				}
+			});
 
-		AlertDialog b = dialogBuilder.create();
-		b.show();
+			AlertDialog b = dialogBuilder.create();
+			b.show();
+		} else {
+			new AlertDialog.Builder(activity)
+					.setTitle("Only verified users can post to the noticeboard")
+					.setMessage("Would you like to register by uploading a photo of your ID?")
+					.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int which) {
+							// TODO: implement
+						}
+					})
+					.setNegativeButton(android.R.string.no, null)
+					.setIcon(android.R.drawable.ic_dialog_alert)
+					.show();
+		}
 	}
 }
