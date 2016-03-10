@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/colorAccent"
+		android:orientation="horizontal">
+
+		<TextView
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:paddingBottom="8dp"
+			android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft"
+			android:paddingTop="8dp"
+			android:text="Your Community noticeboard"
+			android:textColor="@color/black"
+			android:textSize="16sp"
+			android:textStyle="bold"/>
+
+		<ImageView
+			android:id="@+id/ivAdd"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:paddingBottom="4dp"
+			android:paddingTop="4dp"
+			android:src="@drawable/ic_add"/>
+
+	</LinearLayout>
+
+	<TextView
+		android:id="@+id/tvNotice"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="5dp"
+		android:autoLink="web"
+		android:linksClickable="true"
+		android:paddingBottom="3dp"
+		android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft"
+		android:paddingTop="3dp"
+		android:singleLine="false"
+		android:textColorLink="#0000EE"
+		android:visibility="gone"/>
+
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="5dp"
+		android:autoLink="web"
+		android:linksClickable="true"
+		android:paddingBottom="3dp"
+		android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft"
+		android:paddingTop="3dp"
+		android:singleLine="false"
+		android:text="Looking for nanny for working days from 11-2 near ASDA. Samantha 078546987"
+		android:textColorLink="#0000EE"/>
+
+
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="5dp"
+		android:autoLink="web"
+		android:linksClickable="true"
+		android:paddingBottom="3dp"
+		android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft"
+		android:paddingTop="3dp"
+		android:singleLine="false"
+		android:text="Looking for a jogging partner near Queens park. Jogging in the evenings. Bob 078546987"
+		android:textColorLink="#0000EE"/>
+
+
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="5dp"
+		android:autoLink="web"
+		android:linksClickable="true"
+		android:paddingBottom="3dp"
+		android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft"
+		android:paddingTop="3dp"
+		android:singleLine="false"
+		android:text="Looking for a jogging partner near Queens park. Jogging in the evenings. Bob 078546987"
+		android:textColorLink="#0000EE"/>
+</LinearLayout>

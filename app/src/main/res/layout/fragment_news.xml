@@ -1,7 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:orientation="vertical">
+			  android:layout_width="match_parent"
+			  android:layout_height="match_parent"
+			  android:orientation="vertical">
 
 
 	<TextView
@@ -10,15 +10,27 @@
 		android:background="?attr/colorPrimary"
 		android:gravity="center"
 		android:text="News"
+		android:textColor="@color/black"
 		android:textSize="20sp"
 		android:textStyle="bold"
-		android:textColor="@color/black"
 		/>
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="NEWS FRAGMENT"/>
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<include layout="@layout/layout_other_council"/>
+
+			<include layout="@layout/layout_my_council"/>
+
+			<include layout="@layout/layout_noticeboard"/>
+		</LinearLayout>
+	</ScrollView>
 
 </LinearLayout>

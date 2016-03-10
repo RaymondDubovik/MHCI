@@ -4,7 +4,9 @@
 			  android:layout_height="wrap_content"
 			  android:background="@color/colorAccent"
 			  android:orientation="vertical"
-			  android:padding="8dp">
+			  android:paddingBottom="8dp"
+			  android:paddingRight="8dp"
+			  android:paddingTop="8dp">
 
 	<include layout="@layout/layout_header"/>
 
