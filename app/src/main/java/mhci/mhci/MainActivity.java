@@ -2,11 +2,15 @@ package mhci.mhci;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.TabLayout;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -24,9 +28,15 @@ import mhci.mhci.Fragments.VoteFragment;
  * Date: 17.11.2015
  */
 public class MainActivity extends AppCompatActivity {
-    private SectionPagerAdapter adapter;
+	public static final String PARAM_BUNDLE_MENU = "menu";
+	public static final String INTENT_FILTER_FRAGMENT_MENU_CLICK = "fragmentmenuclick";
+	private boolean menuPressed = false;
+
+	private SectionPagerAdapter adapter;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+
+	private SharedPreferences preferences;
 
 
     @Override
@@ -34,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+		preferences = PreferenceManager.getDefaultSharedPreferences(this);
         initPager();
     }
 
@@ -86,7 +97,26 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.getTabAt(0).select();
     }
 
-    private class SectionPagerAdapter extends FragmentPagerAdapter {
+
+	public boolean onKeyUp(int keyCode, KeyEvent event) {
+		if (keyCode == KeyEvent.KEYCODE_MENU) {
+			menuPressed = !menuPressed;
+			Intent data = new Intent(INTENT_FILTER_FRAGMENT_MENU_CLICK);
+			data.putExtra(PARAM_BUNDLE_MENU, menuPressed);
+			sendBroadcast(data);
+			return true;
+		}
+
+		return super.onKeyUp(keyCode, event);
+	}
+
+
+	public boolean isMenuPressed() {
+		return menuPressed;
+	}
+
+
+	private class SectionPagerAdapter extends FragmentPagerAdapter {
         private String tabTitles[] = new String[]{"Map", "News", "Info", "Vote", "Report"};
         private int[] imageResId = {R.drawable.ic_map, R.drawable.ic_news, R.drawable.ic_info, R.drawable.ic_vote, R.drawable.ic_report};
 
