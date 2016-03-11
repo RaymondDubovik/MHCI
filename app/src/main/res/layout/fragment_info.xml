@@ -8,7 +8,7 @@
 		android:layout_height="?attr/actionBarSize"
 		android:background="?attr/colorPrimary"
 		android:gravity="center"
-		android:text="Info"
+		android:text="Your council information"
 		android:textColor="@color/black"
 		android:textSize="20sp"
 		android:textStyle="bold"

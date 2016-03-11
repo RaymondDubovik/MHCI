@@ -9,7 +9,7 @@
 		android:layout_height="?attr/actionBarSize"
 		android:background="?attr/colorPrimary"
 		android:gravity="center"
-		android:text="News"
+		android:text="News &amp; Noticeboard"
 		android:textColor="@color/black"
 		android:textSize="20sp"
 		android:textStyle="bold"

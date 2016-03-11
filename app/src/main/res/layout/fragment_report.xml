@@ -3,6 +3,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="?attr/actionBarSize"
+		android:background="?attr/colorPrimary"
+		android:gravity="center"
+		android:text="Report an issue"
+		android:textColor="@color/black"
+		android:textSize="20sp"
+		android:textStyle="bold" />
+
     <ScrollView
 		android:id="@+id/reportRegistered"
         android:layout_width="match_parent"
@@ -12,18 +22,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
-                android:gravity="center"
-                android:text="Report"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <!-- TODO: Update blank fragment layout -->
 
             <EditText
                 android:id="@+id/editTextReport"

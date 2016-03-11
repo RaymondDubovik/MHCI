@@ -3,6 +3,17 @@
              android:layout_height="match_parent"
              android:orientation="vertical">
 
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="?attr/actionBarSize"
+		android:background="?attr/colorPrimary"
+		android:gravity="center"
+		android:text="Vote on an issue"
+		android:textSize="20sp"
+		android:textStyle="bold"
+		android:textColor="@color/black"
+		/>
+
 	<ScrollView
 		android:id="@+id/voteRegistered"
 		android:layout_width="match_parent"
@@ -12,17 +23,6 @@
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:orientation="vertical">
-			<TextView
-				android:layout_width="match_parent"
-				android:layout_height="?attr/actionBarSize"
-				android:background="?attr/colorPrimary"
-				android:gravity="center"
-				android:text="Vote"
-				android:textSize="20sp"
-				android:textStyle="bold"
-				android:textColor="@color/black"
-				/>
-
 
 			<LinearLayout
 				android:id="@+id/ll1"
