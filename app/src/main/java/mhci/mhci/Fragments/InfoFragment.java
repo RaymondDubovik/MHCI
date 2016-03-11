@@ -60,7 +60,15 @@ public class InfoFragment extends Fragment {
 
 		// Adding child data
 		List<String> hospitals = new ArrayList<>();
-		hospitals.add("TODO: DO http://www.yelp.co.uk/search?cflt=hospitals&find_loc=Hillhead%2C+Glasgow"); // TODO: do // http://www.yelp.co.uk/search?cflt=hospitals&find_loc=Hillhead%2C+Glasgow
+		hospitals.add("Gartnavel General Hospital\n1053 Great Western Rd, G12 0YN\n0141 211 3000");
+		hospitals.add("Yorkhill Sick Childrens Fund\n" +
+				"Dalnair Street, G3 8SJ\n" +
+				"0141 337 3101");
+
+		hospitals.add("Beatson West of Scotland Cancer Centre\n1053 Great Western Road, G12 0YN\n" +
+				"0141 301 7000");
+		hospitals.add("Glasgow Dental Hospital & School\n378 Sauchiehall Street, G2 3JZ\n" +
+				"0141 211 9600");
 
 		List<String> schools = new ArrayList<>();
 		schools.add("Hillhead Primary School\n" +
