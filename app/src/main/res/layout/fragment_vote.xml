@@ -4,6 +4,7 @@
              android:orientation="vertical">
 
 	<ScrollView
+		android:id="@+id/voteRegistered"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent">
 
@@ -141,5 +142,24 @@
 		</LinearLayout>
 	</ScrollView>
 
+
+	<LinearLayout
+		android:id="@+id/voteToHide"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:visibility="gone">
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="To access this option, you first need to verify your identity by uploading a photo of your ID."/>
+
+		<Button
+			android:id="@+id/voteUpload"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Upload"/>
+	</LinearLayout>
 
 </LinearLayout>

@@ -85,6 +85,7 @@ public class NewsFragment extends Fragment implements MenuListener, View.OnClick
 					.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 						public void onClick(DialogInterface dialog, int which) {
 							// TODO: implement
+							activity.callCamera();
 						}
 					})
 					.setNegativeButton(android.R.string.no, null)

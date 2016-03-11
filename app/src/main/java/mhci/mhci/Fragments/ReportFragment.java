@@ -3,16 +3,12 @@ package mhci.mhci.Fragments;
 import android.app.Fragment;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -21,18 +17,28 @@ import mhci.mhci.R;
 
 public class ReportFragment extends Fragment implements MenuListener {
 
+	private MainActivity activity;
     private RadioGroup radioGroup;
     private EditText mEdit;
+
+	private Button uploadButton;
+	private View reportRegistered;
+	private View reportToHide;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_report, container, false);
 
-        MainActivity activity = (MainActivity) getActivity();
-        activity.registerReceiver(new MenuReceiver(this), new IntentFilter(MainActivity.INTENT_FILTER_FRAGMENT_MENU_CLICK));
-        if (activity.isMenuPressed()) {
-            onMenuPressed();
-        }
+		uploadButton = (Button) view.findViewById(R.id.reportUpload);
+		reportRegistered = view.findViewById(R.id.reportRegistered);
+		reportToHide = view.findViewById(R.id.reportToHide);
+
+		activity = (MainActivity) getActivity();
+		activity.registerReceiver(new MenuReceiver(this), new IntentFilter(MainActivity.INTENT_FILTER_FRAGMENT_MENU_CLICK));
+		if (!activity.isMenuPressed()) {
+			onMenuDepressed();
+		}
+
         Button submitButton = (Button) view.findViewById(R.id.reportBtn);
 
         radioGroup = (RadioGroup) view.findViewById(R.id.radioGroup);
@@ -52,26 +58,26 @@ public class ReportFragment extends Fragment implements MenuListener {
                 imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
             }
         });
+
+		uploadButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				activity.callCamera();
+			}
+		});
+
         return view;
     }
 
+	@Override
+	public void onMenuPressed() {
+		reportRegistered.setVisibility(View.VISIBLE);
+		reportToHide.setVisibility(View.GONE);
+	}
 
-    @Override
-    public void onMenuPressed() {
-
-    }
-
-
-    @Override
-    public void onMenuDepressed() {
-
-    }
-
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-
+	@Override
+	public void onMenuDepressed() {
+		reportRegistered.setVisibility(View.GONE);
+		reportToHide.setVisibility(View.VISIBLE);
+	}
 }

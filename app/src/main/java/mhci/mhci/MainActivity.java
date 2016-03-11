@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.provider.MediaStore;
 import android.support.design.widget.TabLayout;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -100,19 +101,38 @@ public class MainActivity extends AppCompatActivity {
 
 	public boolean onKeyUp(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_MENU) {
-			menuPressed = !menuPressed;
-			Intent data = new Intent(INTENT_FILTER_FRAGMENT_MENU_CLICK);
-			data.putExtra(PARAM_BUNDLE_MENU, menuPressed);
-			sendBroadcast(data);
-			return true;
+			return switchStatus();
 		}
 
 		return super.onKeyUp(keyCode, event);
 	}
 
 
+	private boolean switchStatus() {
+		menuPressed = !menuPressed;
+		Intent data = new Intent(INTENT_FILTER_FRAGMENT_MENU_CLICK);
+		data.putExtra(PARAM_BUNDLE_MENU, menuPressed);
+		sendBroadcast(data);
+		return true;
+	}
+
+
 	public boolean isMenuPressed() {
 		return menuPressed;
+	}
+
+
+	private static final int CAMERA_CODE = 50;
+	public void callCamera() {
+		final Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+		startActivityForResult(intent, CAMERA_CODE);
+	}
+
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// Toast.makeText(this, "returned from camera", Toast.LENGTH_LONG).show();
+		switchStatus();
 	}
 
 
