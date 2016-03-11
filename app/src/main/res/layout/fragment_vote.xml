@@ -153,12 +153,14 @@
 		<TextView
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
+			android:padding="15dp"
 			android:text="To access this option, you first need to verify your identity by uploading a photo of your ID."/>
 
 		<Button
 			android:id="@+id/voteUpload"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
+			android:layout_marginLeft="15dp"
 			android:text="Upload"/>
 	</LinearLayout>
 
